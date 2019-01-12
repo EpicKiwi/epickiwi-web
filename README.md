@@ -1,6 +1,6 @@
-# Personal Website
+# EpicKiwi Web
 
-> Mon site perosnnel servant de landing page pour epickiwi.fr
+> Mon site perosnnel servant de landing page pour [epickiwi.fr](http://epickiwi.fr)
 
 ## Quick start
 
