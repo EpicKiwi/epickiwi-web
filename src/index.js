@@ -5,6 +5,14 @@ const app = express();
 
 app.use("/assets", express.static(path.resolve(__dirname, "./assets")));
 
+app.use((req, res, next) => {
+  console.log(
+    `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} ${req.method.toUpperCase()} ${
+      req.path
+    }`
+  );
+});
+
 app.get("/", (req, res) =>
   res.sendFile(path.resolve(__dirname, "./views/index.html"))
 );
