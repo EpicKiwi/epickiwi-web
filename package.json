@@ -1,24 +1,23 @@
 {
-  "name": "personal-website",
+  "name": "epickiwi-web",
   "version": "1.0.0",
   "description": "Mon site perosnnel servant de landing page pour epickiwi.fr",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "DEV=true nodemon .",
-    "prod": "node .",
     "start": "node ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EpicKiwi/personal-website.git"
+    "url": "git+https://github.com/EpicKiwi/epickiwi-web.git"
   },
   "author": "EpicKiwi <me@epickiwi.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EpicKiwi/personal-website/issues"
+    "url": "https://github.com/EpicKiwi/epickiwi-web/issues"
   },
-  "homepage": "https://github.com/EpicKiwi/personal-website#readme",
+  "homepage": "https://github.com/EpicKiwi/epickiwi-web#readme",
   "devDependencies": {
     "nodemon": "^1.18.9"
   },
