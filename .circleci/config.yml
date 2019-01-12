@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:4.8.2-jessie
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: "sudo npm install -g npm@latest exoframe"
+      - run:
+          name: Deploy to epickiwi.fr
+          command: exoframe -u
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy
