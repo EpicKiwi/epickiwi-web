@@ -1,0 +1,55 @@
+:root,
+* {
+  color: white;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #242424;
+}
+
+body > * {
+  margin: 10px 0;
+}
+
+.logo {
+  width: 300px;
+  max-width: 90vw;
+
+  overflow: hidden;
+  border-radius: 100%;
+
+  border-top: solid 1px #111111;
+  border-left: solid 1px #111111;
+
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3), 3px 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo .logo-img {
+  overflow: hidden;
+  border-radius: 100%;
+
+  border-top: solid 1px #5a5a5a;
+  border-left: solid 1px #5a5a5a;
+
+  display: block;
+  width: calc(100% - 2px);
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.main-title .domain {
+  color: #9c9c9c;
+  font-size: 25px;
+}
