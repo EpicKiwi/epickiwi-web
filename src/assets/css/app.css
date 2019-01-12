@@ -53,3 +53,8 @@ body > * {
   color: #9c9c9c;
   font-size: 25px;
 }
+
+.motto {
+  font-size: 30px;
+  font-weight: lighter;
+}
