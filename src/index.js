@@ -11,6 +11,7 @@ app.use((req, res, next) => {
       req.path
     }`
   );
+  return next();
 });
 
 app.get("/", (req, res) =>
