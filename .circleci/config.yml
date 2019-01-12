@@ -10,7 +10,7 @@ jobs:
           command: "sudo npm install -g npm@latest exoframe"
       - run:
           name: Deploy to epickiwi.fr
-          command: exoframe endpoint deployment.epickiwi.fr && exoframe -u -v -t $EXO_TOKEN
+          command: exoframe endpoint $EXO_ENDPOINT && exoframe -u -v -t $EXO_TOKEN
 workflows:
   version: 2
   deploy:
