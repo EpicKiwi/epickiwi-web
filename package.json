@@ -1,6 +1,6 @@
 {
   "name": "epickiwi-web",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mon site perosnnel servant de landing page pour epickiwi.fr",
   "main": "src/index.js",
   "scripts": {
