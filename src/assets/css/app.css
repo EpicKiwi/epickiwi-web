@@ -63,3 +63,14 @@ body > * {
   font-size: 30px;
   font-weight: lighter;
 }
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu > * {
+  margin: 10px;
+}
