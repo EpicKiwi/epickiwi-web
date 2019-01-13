@@ -1,6 +1,6 @@
 {
-  "name": "personal-website",
+  "name": "epickiwi-web",
   "restart": "always",
   "domain": "epickiwi.fr",
-  "project": "homepage"
+  "project": "epickiwi-web"
 }
