@@ -1,5 +1,0 @@
-{
-  "name": "epickiwi-web",
-  "restart": "always",
-  "domain": "epickiwi.fr"
-}
