@@ -6,16 +6,16 @@ services:
       - traefik-net
     deploy:
       labels:
-      	traefik.enable: "true"
-    		traefik.port: "80"
+        traefik.enable: "true"
+        traefik.port: "80"
 
-    		traefik.http.routers.epickiwi-web.entrypoints: web-secure
-    		traefik.http.routers.epickiwi-web.rule: "Host(`epickiwi.fr`)"
-    		traefik.http.routers.epickiwi-web.tls.certresolver: letsencrypt
+        traefik.http.routers.epickiwi-web.entrypoints: web-secure
+        traefik.http.routers.epickiwi-web.rule: "Host(`epickiwi.fr`)"
+        traefik.http.routers.epickiwi-web.tls.certresolver: letsencrypt
 
-    		traefik.http.routers.epickiwi-web-insecure.entrypoints: web
-    		traefik.http.routers.epickiwi-web-insecure.rule: "Host(`epickiwi.fr`)"
-    		traefik.http.routers.epickiwi-web-insecure.middlewares: force-https@file
+        traefik.http.routers.epickiwi-web-insecure.entrypoints: web
+        traefik.http.routers.epickiwi-web-insecure.rule: "Host(`epickiwi.fr`)"
+        traefik.http.routers.epickiwi-web-insecure.middlewares: force-https@file
 
 networks:
   traefik-net:
