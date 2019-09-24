@@ -1,6 +1,6 @@
 version: '3'
 services:
-	web:
+  web:
     image: epickiwi/epickiwi-web
     networks:
       - traefik-net
