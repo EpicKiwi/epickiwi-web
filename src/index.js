@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const moduleResolver = require("./moduleResolver");
 const nodePath = require("path");
-const auth = require("basic-auth");
 
 const app = express();
 
@@ -18,7 +17,6 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  console.log(auth(req))
   res.sendFile(path.resolve(__dirname, "./views/index.html"))
 });
 
