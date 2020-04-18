@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{{title}}{{#if title}} - {{/if}}EpicKiwi</title>
+
+    <link rel="alternate" type="application/atom+xml" title="EpicKiwi.fr" href="/rss">
+    <link rel="icon" href="/assets/img/icon.png" type="image/png">
+
+    <style>
+        a {
+            color: inherit;
+        }
+    </style>
+
+	<!-- OPENGRAPH START --->
+
+	{{#if title}}
+		<meta property="og:title" content="{{title}}" />
+	{{else}}
+		<meta property="og:title" content="EpicKiwi" />
+	{{/if}}
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="EpicKiwi.fr" />
+
+	{{#each opengraph}}
+    <meta property="og:{{@key}}" content="{{this}}" />
+    {{/each}}
+
+    <!-- OPENGRAPH END -->
+
+    <!-- PAGE CSS START -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/vars.css" />
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    {{#each css}}
+    	<link rel="stylesheet" href="{{this}}" />
+    {{/each}}
+    <!-- PAGE CSS END -->
+
+    <!-- PAGE JS START -->
+    {{#each js}}
+    	<script src="{{this}}" type="module"></script>
+    {{/each}}
+    <!-- PAGE JS END -->
+
+</head>
+<body class="{{theme}}">
+
+	{{{body}}}
+
+</body>
+</html>

@@ -3,10 +3,10 @@ const { promisify } = require("util");
 const pglob = promisify(require("glob"));
 const fs = require("fs");
 const pfs = {
-  readFile: promisify(fs.readFile)
+  readFile: promisify(fs.readFile),
 };
 
-async function getScript(moduleName, modulePath) {
+async function getScript(moduleName, modulePath, encoding = "utf8") {
   let filePath = "";
 
   if (modulePath && path.extname(modulePath) === "") {
@@ -23,13 +23,16 @@ async function getScript(moduleName, modulePath) {
       throw err;
     }
     let modulePackage = require(mods[0]);
-    let main = path.resolve(path.dirname(mods[0]), modulePackage.main);
+    let main = path.dirname(mods[0]) + "/.";
+    if (modulePackage.main) {
+      main = path.resolve(path.dirname(mods[0]), modulePackage.main);
+    }
     filePath = modulePath ? path.resolve(path.dirname(main), modulePath) : main;
   } else {
     filePath = `${__dirname}/scripts/${modulePath}`;
   }
 
-  return await pfs.readFile(filePath, "utf8");
+  return await pfs.readFile(filePath, encoding);
 }
 
 const SOURCE_MAP_REGEX = /\/\/.*sourceMappingURL=([^\s\n]+)/;
@@ -38,7 +41,7 @@ function transformImports(scriptDir, jsScript) {
   let imports = jsScript.match(new RegExp(IMPORT_REGEX, "g"));
 
   if (imports) {
-    imports.forEach(el => {
+    imports.forEach((el) => {
       let match = el.match(IMPORT_REGEX);
       let importPath = match[2] || match[5] || match[8];
       let transformedImport = el;

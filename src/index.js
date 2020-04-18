@@ -1,9 +1,19 @@
 const path = require("path");
 const express = require("express");
-const moduleResolver = require("./moduleResolver");
 const nodePath = require("path");
+const expressHandlebars = require("express-handlebars");
+const mime = require("mime");
+
+const settings = require("./settings");
+const pages = require("./pages");
+const moduleResolver = require("./moduleResolver");
+const templateHelpers = require("./template-helpers.js");
 
 const app = express();
+
+app.engine("handlebars", expressHandlebars({ helpers: templateHelpers }));
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "views"));
 
 app.use("/assets", express.static(path.resolve(__dirname, "./assets")));
 
@@ -16,24 +26,41 @@ app.use((req, res, next) => {
   return next();
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/index.html"))
+// Inject current URL to renders
+app.use(function(req, res, next) {
+  res.locals.url = req.protocol + "://" + req.get("host") + req.originalUrl;
+  next();
 });
 
 app.get(
-  ["/node_modules/:module/:path(*)?", "/scripts/:path(*)"],
+  ["/node_modules/:moduleName/:assetPath(*)?", "/scripts/:assetPath(*)"],
   async (req, res) => {
     let result = {};
-    const { module, path } = req.params;
-    let modDir = `${module ? `/node_modules/${module}` : "/scripts"}${
-      path ? `/${nodePath.dirname(path)}` : ""
+    let { moduleName, assetPath } = req.params;
+
+    if (moduleName && moduleName.startsWith("@")) {
+      let splittedAssets = assetPath.split("/");
+      moduleName += "/" + splittedAssets[0];
+      splittedAssets.splice(0, 1);
+      assetPath = splittedAssets.join("/");
+    }
+
+    let modDir = `${moduleName ? `/node_modules/${moduleName}` : "/scripts"}${
+      assetPath ? `/${nodePath.dirname(assetPath)}` : ""
     }`;
+
     try {
-      result = moduleResolver.transformImports(
-        modDir,
-        await moduleResolver.getScript(module, path)
-      );
-      res.type("application/javascript");
+      if (
+        !mime.getType(req.path) ||
+        mime.getType(req.path) == "application/javascript"
+      ) {
+        result = moduleResolver.transformImports(
+          modDir,
+          await moduleResolver.getScript(moduleName, assetPath)
+        );
+      } else {
+        result = await moduleResolver.getScript(moduleName, assetPath, null);
+      }
     } catch (e) {
       if (e.status) {
         res.status(e.status);
@@ -42,13 +69,24 @@ app.get(
       }
       result = { error: e.message };
     }
+
+    res.type(mime.getType(req.path) || "application/javascript");
+
+    if (moduleName) {
+      res.set("Cache-Control", "public, max-age=2629800");
+    } else {
+      res.set("Cache-Control", "public, max-age=86400");
+    }
+
     res.send(result);
   }
 );
 
-const port = process.env.PORT || (process.env.DEV ? 8080 : 80);
+app.use(pages);
+
+const port = settings.port;
 app.listen(port, () => {
-  if (process.env.DEV) {
+  if (settings.dev) {
     console.info(`Listening on http://localhost:${port}/`);
   } else {
     console.info(`Listening on *:${port}`);

@@ -1,0 +1,71 @@
+{{#if firstArticle.meta.cover}}
+<div class="big-picture">
+  <img loading="lazy" src="{{firstArticle.meta.cover}}">
+</div>
+{{/if}}
+
+    <div class="main-content">
+      <h1 class="main-title">EpicKiwi<span class="domain">.fr</span></h1>
+      <div class="logo">
+        <img src="/assets/img/logo.png" alt="logo" class="logo-img" />
+      </div>
+
+      <section class="blog">
+
+        {{#with firstArticle}}
+          {{> article-card}}
+        {{/with}}
+
+        <div class="hybrid-section">
+          <section class="blog-follow">
+
+          {{#each articles}}
+            {{> article-card}}
+          {{/each}}
+
+          </section>
+
+          <aside class="misc-links {{#if noArticles}}alone{{/if}}">
+
+            <ul class="misc-section quicklinks">
+              <li><a href="https://bdecesilyon.fr"><ek-icon icon="web"></ek-icon> BDE CESI Lyon</a></li>
+              <li><a href="https://cloudinlyon.fr"><ek-icon icon="web"></ek-icon> Cloud in Lyon</a></li>
+            </ul>
+
+            <ul class="misc-section quicklinks">
+              <li><a href="/a-propos"><ek-icon icon="chevron-right"></ek-icon> À propos</a></li>
+              <li><a href="/rss"><ek-icon icon="rss"></ek-icon> Flux Atom/RSS</a></li>
+            </ul>
+
+            <div class="misc-section contacts">
+              <a target="_blank" href="http://github.com/epickiwi">
+                <link-card
+                  color="#24292e"
+                  name="GitHub"
+                  abbr="Gh"
+                  caption="EpicKiwi"
+                  image="/assets/img/icons/github.svg"
+                ></link-card>
+              </a>
+              <a target="_blank" href="mailto:me@epickiwi.fr">
+                <link-card
+                  color="#FF4D00"
+                  name="Email"
+                  abbr="Em"
+                  caption="me@epickiwi.fr"
+                  image="/assets/img/icons/email.svg"
+                ></link-card>
+              </a>
+            </div>
+
+          </aside>
+
+        </section>
+      </div>
+
+    </div>
+    <nav class="footlinks">
+      <ul>
+        <li><a href="https://mail.epickiwi.fr">Webmail</a></li>
+      </ul>
+    </nav>
