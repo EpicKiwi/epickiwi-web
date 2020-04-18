@@ -5,7 +5,7 @@ services:
         networks:
             - traefik-net
         volumes:
-            - content
+            - /home/epickiwi/web-content:/content
         deploy:
             labels:
                 traefik.enable: "true"
@@ -33,9 +33,3 @@ services:
 networks:
     traefik-net:
         external: true
-
-volumes:
-    content:
-        type: bind
-        source: /home/epickiwi/web-content
-        target: /content
