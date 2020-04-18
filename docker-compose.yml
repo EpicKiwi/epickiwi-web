@@ -5,7 +5,7 @@ services:
         networks:
             - traefik-net
         volumes:
-            - /home/epickiwi/web-content:/content
+            - /home/epickiwi/web-content:/home/content
         deploy:
             labels:
                 traefik.enable: "true"
