@@ -128,6 +128,7 @@ class Code extends LitElement {
 			::slotted(.line) {
 				position: relative;
 				padding-left: 50px !important;
+				min-height: 28px;
 			}
 
 			::slotted(.line)::before {
