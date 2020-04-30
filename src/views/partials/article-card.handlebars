@@ -1,7 +1,7 @@
 <a class="article-card featured-article" href="{{href}}">
 
   {{#if meta.cover}}
-    <img class="cover" loading="lazy" src="{{meta.cover}}"/>
+    <img class="cover" loading="lazy" src="{{relativeToFile href meta.cover}}"/>
   {{/if}}
 
   <div class="content">

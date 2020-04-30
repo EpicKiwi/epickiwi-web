@@ -1,6 +1,6 @@
 {{#if firstArticle.meta.cover}}
 <div class="big-picture">
-  <img loading="lazy" src="{{firstArticle.meta.cover}}">
+  <img loading="lazy" src="{{relativeToFile firstArticle.href firstArticle.meta.cover}}">
 </div>
 {{/if}}
 
