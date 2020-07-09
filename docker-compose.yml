@@ -38,15 +38,15 @@ services:
         deploy:
             labels:
                 traefik.enable: "true"
-                traefik.http.services.epickiwi-web.loadbalancer.server.port: "80"
+                traefik.http.services.epickiwi-share.loadbalancer.server.port: "80"
 
-                traefik.http.routers.epickiwi-web.entrypoints: web-secure
-                traefik.http.routers.epickiwi-web.rule: "Host(`share.epickiwi.fr`)"
-                traefik.http.routers.epickiwi-web.tls.certresolver: letsencrypt
+                traefik.http.routers.epickiwi-share.entrypoints: web-secure
+                traefik.http.routers.epickiwi-share.rule: "Host(`share.epickiwi.fr`)"
+                traefik.http.routers.epickiwi-share.tls.certresolver: letsencrypt
 
-                traefik.http.routers.epickiwi-web-insecure.entrypoints: web
-                traefik.http.routers.epickiwi-web-insecure.rule: "Host(`share.epickiwi.fr`)"
-                traefik.http.routers.epickiwi-web-insecure.middlewares: force-https@file
+                traefik.http.routers.epickiwi-share-insecure.entrypoints: web
+                traefik.http.routers.epickiwi-share-insecure.rule: "Host(`share.epickiwi.fr`)"
+                traefik.http.routers.epickiwi-share-insecure.middlewares: force-https@file
 networks:
     traefik-net:
         external: true
