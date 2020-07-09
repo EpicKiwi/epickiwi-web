@@ -29,7 +29,24 @@ services:
                 traefik.http.routers.epickiwi-webmail-insecure.entrypoints: web
                 traefik.http.routers.epickiwi-webmail-insecure.rule: "Host(`mail.epickiwi.fr`)"
                 traefik.http.routers.epickiwi-webmail-insecure.middlewares: force-https@file
+    share:
+        image: nginx
+        networks:
+            - traefik-net
+        volumes:
+            - /home/epickiwi/public-share:/usr/share/nginx/html
+        deploy:
+            labels:
+                traefik.enable: "true"
+                traefik.http.services.epickiwi-web.loadbalancer.server.port: "80"
 
+                traefik.http.routers.epickiwi-web.entrypoints: web-secure
+                traefik.http.routers.epickiwi-web.rule: "Host(`share.epickiwi.fr`)"
+                traefik.http.routers.epickiwi-web.tls.certresolver: letsencrypt
+
+                traefik.http.routers.epickiwi-web-insecure.entrypoints: web
+                traefik.http.routers.epickiwi-web-insecure.rule: "Host(`share.epickiwi.fr`)"
+                traefik.http.routers.epickiwi-web-insecure.middlewares: force-https@file
 networks:
     traefik-net:
         external: true
