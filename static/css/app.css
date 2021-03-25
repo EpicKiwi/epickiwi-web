@@ -135,83 +135,6 @@ body > * {
   margin: auto;
 }
 
-.article-card {
-  display: block;
-  background: var(--bright-background-color);
-  color: var(--onbright-text-color);
-  text-decoration: inherit;
-  width: 100%;
-  min-height: 300px;
-  display: flex;
-  align-items: stretch;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  transition-property: box-shadow transform;
-  transition: ease 0.5s;
-  margin-bottom: 50px;
-}
-
-.article-card:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transform: scale(1.01);
-}
-
-.article-card .cover {
-  object-fit: cover;
-  width: 40%;
-}
-
-.article-card .content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.article-card .title {
-  margin-bottom: 20px;
-  font-size: 40px;
-}
-
-.article-card .abstract {
-  flex: 1;
-  font-size: 18px;
-  opacity: 0.6;
-  margin-bottom: 20px;
-}
-
-.article-card .meta {
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-.article-card .meta > * {
-  margin-right: 20px;
-  font-size: 15px;
-  opacity: 0.6;
-}
-
-.article-card .meta > :last-child {
-  margin-right: 0;
-}
-
-.article-card .meta .separator {
-  flex: 1;
-}
-
-@media screen and (max-width: 1050px) {
-  .article-card {
-    flex-direction: column;
-  }
-  .article-card .cover {
-    object-fit: cover;
-    width: 100%;
-    max-height: 300px;
-  }
-}
-
 .hybrid-section {
   display: flex;
   margin-top: 75px;
@@ -261,6 +184,10 @@ body > * {
   margin-bottom: 0;
 }
 
+.quicklinks ek-icon {
+  margin-right: 8px;
+}
+
 .contacts {
   display: flex;
   flex-direction: row;
@@ -270,4 +197,16 @@ body > * {
 
 .contacts > * {
   margin: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+  .hybrid-section {
+    flex-direction: column;
+  }
+
+  .hybrid-section .misc-links {
+    order: -1;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

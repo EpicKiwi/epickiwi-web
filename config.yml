@@ -1,3 +1,56 @@
-baseURL: "http://example.org/"
+baseURL: "http://epickiwi.fr/"
 languageCode: "fr-fr"
 title: "EpicKiwi"
+
+params:
+  description: Code et Aventures
+  images:
+  - /img/logo.png
+
+Author:
+  name: EpicKiwi
+
+copyright: License Creative Common BY NC
+
+menu:
+
+  main:
+    - name: A propos
+      url: /a-propos
+    - name: RSS des articles
+      url: /articles/index.xml
+      params:
+        icon: rss
+    - name: RSS de la liste de lecture
+      url: /readlist/index.xml
+      params:
+        icon: rss
+
+  external:
+    - name: GitHub
+      url: https://github.com/EpicKiwi
+      weight: 10
+      params:
+        icon: github
+
+    - name: Twitter
+      url: https://twitter.com/MrEpicKiwi
+      weight: 20
+      params:
+        icon: twitter
+
+    - name: BDE CESI Lyon
+      url: https://bdecesilyon.fr
+      weight: 30
+      params:
+        icon: web
+
+  footer:
+    - name: Webmail
+      url: https://mail.epickiwi.fr
+
+params:
+  
+  mainSections:
+    - articles
+    - readlist

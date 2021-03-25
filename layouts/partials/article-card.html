@@ -1,0 +1,27 @@
+<a class="article-card featured-article" href="{{ .RelPermalink }}">
+
+    {{ if isset .Params "cover" }}
+      <img class="cover" loading="lazy" src="{{ (.Resources.GetMatch .Params.cover).RelPermalink }}"/>
+    {{ end }}
+  
+    <div class="content">
+  
+      <h2 class="title" >{{.Title}}</h2>
+  
+      <p class="abstract" >{{.Summary}}</p>
+  
+      <ul class="meta">
+        {{ if isset .Params "author" }}
+          <li class="author">Par {{.Params.author}}</li>
+        {{ end }}
+        <li class="date">
+            <ek-icon src="/img/icons/date.svg"></ek-icon>
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ partial "longdate.html" .Date }}</time>
+        </li>
+        <span class="separator"></span>
+        {{ partial "taglist.html" . }}
+      </ul>
+  
+    </div>
+  
+  </a>

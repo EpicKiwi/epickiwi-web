@@ -1,0 +1,19 @@
+{{ range .GetTerms "categories" }}
+    <li class="tag">
+        {{ if isset .Params "icon" }}
+            <ek-icon src="{{(.Resources.GetMatch .Params.icon).RelPermalink }}" ></ek-icon>
+        {{ else }}
+            <ek-icon src="/img/icons/tag.svg" ></ek-icon>
+        {{ end }}
+        {{.Title}}</li>
+{{ end }}
+
+{{ range .GetTerms "tags" }}
+    <li class="tag">
+        {{ if isset .Params "icon" }}
+            <ek-icon src="{{(.Resources.GetMatch .Params.icon).RelPermalink }}" ></ek-icon>
+        {{ else }}
+            <ek-icon src="/img/icons/tag.svg" ></ek-icon>
+        {{ end }}
+            {{.Title}}</li>
+{{ end }}

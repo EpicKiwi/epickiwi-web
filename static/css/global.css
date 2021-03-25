@@ -13,6 +13,8 @@ a {
 
 body {
 	min-height: 100vh;
+	max-width: 100vw;
+	overflow-x: hidden;
 
 	background: var(--background-color);
 	color: var(--text-color);
@@ -36,4 +38,132 @@ h1,
 h2,
 h3 {
 	font-family: var(--title-font-stack);
+}
+
+.article-card {
+  display: block;
+  background: var(--bright-background-color);
+  color: var(--onbright-text-color);
+  text-decoration: inherit;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: stretch;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition-property: box-shadow transform;
+  transition: ease 0.5s;
+  margin-bottom: 50px;
+}
+
+.article-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01);
+}
+
+.article-card .cover {
+  object-fit: cover;
+  width: 40%;
+}
+
+.article-card .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.article-card .title {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.article-card .abstract {
+  flex: 1;
+  font-size: 18px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.article-card .meta {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.article-card .meta > * {
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+.article-card .meta > :last-child {
+  margin-right: 0;
+}
+
+.article-card .meta .separator {
+  flex: 1;
+}
+
+@media screen and (max-width: 1050px) {
+  .article-card {
+    flex-direction: column;
+  }
+  .article-card .cover {
+    object-fit: cover;
+    width: 100%;
+    max-height: 300px;
+  }
+}
+
+.readlist-card {
+  background: rgba(0, 0, 0, 0.3);
+  list-style: none;
+  padding: 20px;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 25px;
+  transition: linear 0.1s background;
+}
+
+.readlist-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.readlist-card .title, .readlist-card .author {
+  display: inline;
+  font-size: 1em;
+}
+
+.readlist-card .author {
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+.readlist-card .author::before {
+  content: " — "
+}
+
+.readlist-card .content:empty {
+  display: none;
+}
+
+.readlist-card .content {
+  margin-top: 10px;
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+.readlist-card .content * {
+  margin: 0;
+}
+
+.readlist-card .icon {
+  float: right;
+  font-size: 1.5em;
+  position: relative;
+  top: -0.2em;
+  opacity: 0.75;
 }

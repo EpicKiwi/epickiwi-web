@@ -1,0 +1,97 @@
+{{ define "css" }}
+  <link rel="stylesheet" href="/css/app.css"/>
+{{ end }}
+
+{{ define "main" }}
+
+{{ $articles := where .Site.RegularPages "Section" "articles" }}
+{{ $pages := where .Site.RegularPages "Section" "in" .Site.Params.mainSections }}
+{{ $firstArticle := index (first 1 $articles) 0 }}
+
+{{ with $firstArticle }}
+    {{ if .Params.cover }}
+        <div class="big-picture">
+            <img loading="lazy" src="{{ (.Resources.GetMatch .Params.cover).RelPermalink }}">
+        </div>
+    {{ end }}
+{{ end }}
+
+    <div class="main-content">
+      <h1 class="main-title">EpicKiwi<span class="domain">.fr</span></h1>
+      <div class="logo">
+        <img src="/img/logo.png" alt="logo" class="logo-img" />
+      </div>
+
+      <section class="blog">
+
+        {{with $firstArticle}}
+          {{ partial "article-card.html" . }}
+        {{ end }}
+
+        <div class="hybrid-section">
+          <section class="blog-follow">
+
+
+          {{range first 10 $pages}}
+            {{if ne . $firstArticle }}
+
+            {{ if eq .Section "articles" }}
+              {{ partial "article-card.html" . }}
+            {{ end }}
+
+            {{ if eq .Section "readlist" }}
+              {{ partial "readlist-card.html" . }}
+            {{ end }}
+
+            {{ end }}
+          {{ end }}
+
+          </section>
+
+          <aside class="misc-links {{ if eq (len $pages) 0 }}alone{{ end }}">
+
+            <ul class="misc-section quicklinks">
+              {{ range .Site.Menus.external }}
+                <li>
+                  <a href="{{ .URL }}" target="_blank">
+                    {{ if isset .Params "icon" }}
+                      <ek-icon src="/img/icons/{{ .Params.icon }}.svg"></ek-icon>
+                    {{ else }}
+                      <ek-icon src="/img/icons/web.svg"></ek-icon>
+                    {{ end }}
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end}}
+            </ul>
+
+            <ul class="misc-section quicklinks">
+              {{ range .Site.Menus.main }}
+                <li>
+                  <a href="{{ .URL }}">
+                    {{ if isset .Params "icon" }}
+                      <ek-icon src="/img/icons/{{ .Params.icon }}.svg"></ek-icon>
+                    {{ else }}
+                      <ek-icon src="/img/icons/chevron-right.svg"></ek-icon>
+                    {{ end }}
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end}}
+            </ul>
+
+          </aside>
+
+        </section>
+      </div>
+
+    </div>
+    <nav class="footlinks">
+      <ul>
+        {{ range .Site.Menus.footer }}
+            <li><a href="{{.URL}}">{{.Name}}</a></li>
+        {{ end}}
+      </ul>
+    </nav>
+
+    {{ end }}

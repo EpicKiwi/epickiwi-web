@@ -1,0 +1,12 @@
+<a class="readlist-card" {{ if isset .Params "ref" }}href="{{ .Params.ref }}"{{ end }} target="_blank" >
+    {{ if isset .Params "type" }}
+    <div class="icon">
+        <ek-icon src="/img/icons/readlist/{{.Params.type}}.svg" ></ek-icon>
+    </div>
+    {{ end }}
+    <h1 class="title" >{{.Title}}</h1>
+    {{ if isset .Params "author" }}
+        <p class="author">{{.Params.author}}</p>
+    {{ end }}
+    <div class="content">{{.Content}}</div>
+</a>
