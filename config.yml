@@ -54,3 +54,8 @@ params:
   mainSections:
     - articles
     - readlist
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

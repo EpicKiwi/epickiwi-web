@@ -34,7 +34,7 @@
 </header>
 
 <!-- Actual page content -->
-<div class="page-content">{{.Content}}</div>
+<div class="page-content">{{.Content | safeHTML }}</div>
 
 <footer class="page-footer">
 
@@ -42,6 +42,13 @@
 	<div class="next-page">
 		{{ partial "article-card.html" .PrevInSection }}
 	</div>
+
+	{{ else if .NextInSection }}
+	
+	<div class="next-page">
+		{{ partial "article-card.html" .NextInSection }}
+	</div>
+
 	{{ end }}
 
 	<div class="license"><a href="https://creativecommons.org/licenses/by-nc/3.0/fr/">License Creative Common BY NC</a></div>
