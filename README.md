@@ -7,7 +7,13 @@ Le site est un site statique Hugo disposant d'un layout personnalisé.
 ## Quick start
 
 ```bash
-hugo server
+hugo server -D
+```
+
+Pour travailler sur l'édition du layout :
+
+```bash
+hugo server --renderToDisk --disableFastRender -D
 ```
 
 ## Contenu
