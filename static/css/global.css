@@ -1,28 +1,28 @@
 :root,
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: var(--body-font-stack);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-font-stack);
 }
 
 a {
-	text-decoration: inherit;
-	color: inherit;
+  text-decoration: inherit;
+  color: inherit;
 }
 
 body {
-	min-height: 100vh;
-	max-width: 100vw;
-	overflow-x: hidden;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
 
-	background: var(--background-color);
-	color: var(--text-color);
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 svg,
 svg > * {
-	fill: currentColor;
+  fill: currentColor;
 }
 
 h1,
@@ -31,13 +31,13 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 h1,
 h2,
 h3 {
-	font-family: var(--title-font-stack);
+  font-family: var(--title-font-stack);
 }
 
 .article-card {
@@ -119,7 +119,7 @@ h3 {
 }
 
 .readlist-card {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.03);
   list-style: none;
   padding: 20px;
   border-radius: 10px;
@@ -132,7 +132,8 @@ h3 {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.readlist-card .title, .readlist-card .author {
+.readlist-card .title,
+.readlist-card .author {
   display: inline;
   font-size: 1em;
 }
@@ -143,7 +144,7 @@ h3 {
 }
 
 .readlist-card .author::before {
-  content: " — "
+  content: " — ";
 }
 
 .readlist-card .content:empty {

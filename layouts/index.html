@@ -80,6 +80,24 @@
               {{ end}}
             </ul>
 
+            <ul class="misc-section quicklinks contact">
+                <li>
+                  <a href="mailto:{{ .Site.Author.email }}">
+                    <ek-icon src="/img/icons/email.svg"></ek-icon>
+                    {{ .Site.Author.email }}
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="{{ .Site.Author.gpg.ref }}">
+                    <ek-icon src="/img/icons/gpg-key.svg"></ek-icon>
+                    {{ .Site.Author.gpg.id }}
+                  </a>
+                </li>
+                <li class="gpg-fingerprint">
+                  {{ .Site.Author.gpg.fingerprint }}
+                </li>
+            </ul>
+
           </aside>
 
         </section>

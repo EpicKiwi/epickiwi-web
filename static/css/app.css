@@ -170,6 +170,14 @@ body > * {
   display: block;
 }
 
+.quicklinks li.gpg-fingerprint {
+  padding: 5px 15px;
+  font-family: monospace;
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 2em;
+}
+
 .quicklinks li a {
   padding: 15px;
   border-radius: 10px;
