@@ -1,0 +1,19 @@
+* {
+	--text-color: rgba(255, 255, 255, 0.8);
+	--muted-text-color: #9b9b9b;
+	--background-color: #242424;
+
+	--primary-color: #ff4d00;
+	--secondary-color: #53b000;
+
+	--bright-background-color: #f7f7f7;
+	--onbright-text-color: #262626;
+
+	--success-color: var(--secondary-color);
+
+	--body-font-stack: Roboto, sans-serif;
+	--title-font-stack: "Playfair Display", serif;
+
+	--card-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	--card-radius: 3px;
+}

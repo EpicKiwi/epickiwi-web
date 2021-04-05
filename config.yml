@@ -1,0 +1,66 @@
+baseURL: "http://epickiwi.fr/"
+languageCode: "fr-fr"
+title: "EpicKiwi"
+
+params:
+  description: Code et Aventures
+  images:
+  - /img/logo.png
+
+Author:
+  name: EpicKiwi
+  email: me@epickiwi.fr
+  gpg:
+    ref: http://keys.gnupg.net/pks/lookup?op=get&search=0xC4B28FD2729941CE
+    id: C4B28FD2729941CE
+    fingerprint: ACDE 9D48 85A5 0087 714A  F933 C4B2 8FD2 7299 41CE
+
+copyright: License Creative Common BY NC
+
+menu:
+
+  main:
+    - name: A propos
+      url: /a-propos
+    - name: RSS des articles
+      url: /articles/index.xml
+      params:
+        icon: rss
+    - name: RSS de la liste de lecture
+      url: /readlist/index.xml
+      params:
+        icon: rss
+
+  external:
+    - name: GitHub
+      url: https://github.com/EpicKiwi
+      weight: 10
+      params:
+        icon: github
+
+    - name: Twitter
+      url: https://twitter.com/MrEpicKiwi
+      weight: 20
+      params:
+        icon: twitter
+
+    - name: BDE CESI Lyon
+      url: https://bdecesilyon.fr
+      weight: 30
+      params:
+        icon: web
+
+  footer:
+    - name: Webmail
+      url: https://mail.epickiwi.fr
+
+params:
+  
+  mainSections:
+    - articles
+    - readlist
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
