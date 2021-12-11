@@ -11,7 +11,7 @@
 {{ with $firstArticle }}
     {{ if .Params.cover }}
         <div class="big-picture">
-            <img loading="lazy" src="{{ (.Resources.GetMatch .Params.cover).RelPermalink }}">
+            <img loading="lazy" src="{{ ((.Resources.GetMatch .Params.cover).Fit "1920x1920").RelPermalink }}">
         </div>
     {{ end }}
 {{ end }}

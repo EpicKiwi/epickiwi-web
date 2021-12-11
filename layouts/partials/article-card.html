@@ -1,7 +1,9 @@
 <a class="article-card featured-article" href="{{ .RelPermalink }}">
 
     {{ if isset .Params "cover" }}
-      <img class="cover" loading="lazy" src="{{ (.Resources.GetMatch .Params.cover).RelPermalink }}"/>
+      {{ with .Resources.GetMatch .Params.cover }}
+        <img class="cover" loading="lazy" src="{{ (.Fit "1000x1000").RelPermalink }}"/>
+      {{end}}
     {{ end }}
   
     <div class="content">

@@ -49,6 +49,11 @@ params:
     - articles
     - readlist
 
+imaging:
+  resampleFilter: "box"
+  quality: 75
+  anchor: Center
+
 markup:
   goldmark:
     renderer:

@@ -1,0 +1,10 @@
+<a href="{{ .Destination | safeURL }}">
+
+    {{$root := .}}
+
+    {{ with .Page.Resources.GetMatch .Destination }}
+
+    <img src='{{ (.Fit "1500x1500").RelPermalink }}' alt="{{ $root.Text }}" {{ with $root.Title}} title="{{ $root }}"{{ end }} loading="lazy" />
+
+    {{ end }}
+</a>

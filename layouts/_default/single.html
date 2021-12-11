@@ -8,7 +8,9 @@
 
 	<div class="page-cover">
 		{{if isset .Params "cover"}}
-		<img src="{{.Params.cover}}">
+		{{ with .Resources.GetMatch .Params.cover }}
+			<img src="{{ (.Fit "1920x1920").RelPermalink }}"/>
+		{{end}}
 		{{end}}
 	</div>
 
