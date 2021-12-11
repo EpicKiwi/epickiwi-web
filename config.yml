@@ -11,8 +11,7 @@ Author:
   name: EpicKiwi
   email: me@epickiwi.fr
   gpg:
-    ref: http://keys.gnupg.net/pks/lookup?op=get&search=0xC4B28FD2729941CE
-    id: C4B28FD2729941CE
+    ref: https://keys.openpgp.org/vks/v1/by-fingerprint/ACDE9D4885A50087714AF933C4B28FD2729941CE
     fingerprint: ACDE 9D48 85A5 0087 714A  F933 C4B2 8FD2 7299 41CE
 
 copyright: License Creative Common BY NC
