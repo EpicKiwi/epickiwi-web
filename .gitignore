@@ -4,6 +4,6 @@ content/*
 epickiwi-web.old
 public
 
-ressources/_gen/*
+resources/_gen/
 
 .hugo_build.lock
