@@ -42,13 +42,6 @@ menu:
       weight: 20
       params:
         icon: twitter
-
-    - name: BDE CESI Lyon
-      url: https://bdecesilyon.fr
-      weight: 30
-      params:
-        icon: web
-
   footer:
     - name: Webmail
       url: https://mail.epickiwi.fr
