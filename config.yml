@@ -42,9 +42,6 @@ menu:
       weight: 20
       params:
         icon: twitter
-  footer:
-    - name: Webmail
-      url: https://mail.epickiwi.fr
 
 params:
   
