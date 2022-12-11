@@ -1,0 +1,49 @@
+@import url("./types.css");
+
+body {
+  --text-color: rgba(255, 255, 255, 0.8);
+  --muted-text-color: #9b9b9b;
+
+  --primary-color: #ff4d00;
+  --secondary-color: #53b000;
+
+  --bright-background-color: #f7f7f7;
+  --onbright-text-color: #262626;
+
+  --dark-background-color: #242424;
+  --ondark-text-color: rgba(255, 255, 255, 0.95);
+
+  --success-color: var(--secondary-color);
+
+  --body-font-stack: Roboto, sans-serif;
+  --title-font-stack: "Playfair Display", serif;
+
+  --card-background-color: white;
+  --card-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  --card-radius: 3px;
+
+  --scenario-action-color: rgb(0, 53, 151);
+  --scenario-consequence-color: rgb(172, 92, 0);
+}
+
+body,
+body * {
+  --background-color: var(--bright-background-color);
+  --text-color: var(--onbright-text-color);
+}
+
+body.bright,
+body .bright,
+body.bright *,
+body .bright * {
+  --background-color: var(--bright-background-color);
+  --text-color: var(--onbright-text-color);
+}
+
+body.dark,
+body .dark,
+body.dark *,
+body .dark * {
+  --background-color: var(--dark-background-color);
+  --text-color: var(--ondark-text-color);
+}

@@ -1,0 +1,90 @@
+@import url("../colors.css");
+@import url("../lib/fonts.css");
+@import url("../lib/global.css");
+@import url("article.css");
+
+body,
+body * {
+  --background-color: var(--dark-background-color);
+  --text-color: var(--ondark-text-color);
+}
+
+main {
+  padding-bottom: 0;
+}
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-height: unset;
+  box-shadow: none;
+  min-height: 100vh;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header::before,
+header::after {
+  content: none;
+}
+
+header > img:first-of-type,
+header > img[itemprop="image"],
+header > img[property="image"] {
+  width: auto;
+  height: calc(100vh - 40px);
+  max-width: 100%;
+  position: relative;
+  left: 0;
+  transform: none;
+  box-shadow: none;
+  box-shadow: var(--card-shadow);
+  opacity: 1;
+  object-fit: scale-down;
+}
+
+header:last-child {
+  margin-bottom: 0;
+}
+
+header .cartel,
+header .cartel * {
+  --text-color: var(--onbright-text-color) !important;
+  --background-color: var(--card-background-color) !important;
+}
+
+header .cartel {
+  color: var(--text-color);
+  margin-left: 25px;
+  background: var(--background-color);
+  padding: 15px;
+  border: solid 1px var(--text-color);
+  margin-top: 50px;
+  min-width: 400px;
+}
+
+header .cartel time::before,
+header .cartel [itemprop^="date"]::before,
+header .cartel [property^="date"]::before,
+header .cartel > ul > *::before,
+header .cartel [itemprop="about"]::before,
+header .cartel [property="about"]::before {
+  filter: invert(1);
+}
+
+header .cartel > * {
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin: 0;
+  width: 100%;
+}

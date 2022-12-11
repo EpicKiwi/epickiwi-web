@@ -1,0 +1,80 @@
+<style>
+  @import url("/src/css/lib/global.css");
+
+  #main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    z-index: 5000;
+    color: var(--header-text-color, var(--text-color, white));
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #main-header h1 {
+    flex: 1;
+  }
+
+  #main-header h1 a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+    font-size: 25px;
+    font-weight: 300;
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  #main-header .logo {
+    height: 2em;
+    border-radius: 100%;
+    margin-right: 10px;
+
+    border: solid white 1px;
+
+    transition: ease 0.5s transform;
+  }
+
+  #main-header h1 a:hover .logo {
+    transform: scale(1.2);
+    transition-delay: 0.2s;
+  }
+
+  @media print {
+    #main-header {
+      display: none;
+    }
+  }
+
+  footer::slotted(*) {
+    font-weight: bold;
+  }
+
+  footer {
+    min-height: 25vh;
+    padding: 25px;
+    text-align: right;
+  }
+</style>
+
+<header id="main-header">
+  <h1>
+    <a href="/" title="Accueil du site">
+      <img width="50" height="50" src="/src/imgs/logo.png" alt="Logo EpicKiwi" class="logo" />
+      EpicKiwi
+    </a>
+  </h1>
+</header>
+
+<slot></slot>
+
+<footer>
+  <slot name="footer"></slot>
+</footer>

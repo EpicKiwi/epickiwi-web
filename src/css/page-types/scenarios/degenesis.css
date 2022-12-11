@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "calluna";
+  src: url("./degenesis/calluna/calluna-regular-webfont.woff2") format("woff2"),
+    url("./degenesis/calluna/calluna-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("./degenesis/avenir/avenir-roman-webfont.woff2") format("woff2"),
+    url("./degenesis/avenir/avenir-roman-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  --background-color: #fdfdfd;
+  --body-font-stack: "calluna", serif;
+  --title-font-stack: "avenir", sans-serif;
+  --text-color: black;
+}
+
+header h1 {
+  font-size: clamp(3em, 5vw, 10em);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-family: var(--title-font-stack);
+  font-weight: normal !important;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+h1 small,
+h2 small,
+h3 small {
+  text-transform: none;
+}
+
+body {
+  background: url("./degenesis/background-top.jpg"),
+    url("./degenesis/background-bottom.jpg"), var(--background-color);
+
+  background-size: 100% auto, 100% auto;
+  background-size: clamp(1000px, 100%, 100%) auto,
+    clamp(1000px, 100%, 100%) auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0% 100vh, bottom;
+}
+
+@media print {
+  body {
+    background: var(--background-color);
+  }
+}

@@ -1,0 +1,45 @@
+[typeof$="CreativeWork"] {
+  --type-label: "Création";
+}
+
+[typeof$="Photograph"] {
+  --type-label: "Photographie";
+}
+
+[typeof$="Drawing"] {
+  --type-label: "Dessin";
+}
+
+[typeof$="Painting"] {
+  --type-label: "Peinture";
+}
+
+[typeof$="Article"] {
+  --type-label: "Article";
+}
+
+[typeof$="HowTo"] {
+  --type-label: "Guide";
+}
+
+[typeof$="Recipe"] {
+  --type-label: "Recette";
+}
+
+[typeof$="ShortStory"] {
+  --type-label: "Nouvelle";
+}
+
+[typeof$="Map"] {
+  --type-label: "Carte";
+}
+
+[typeof$="Manuscript"] {
+  --type-label: "Manuscrit";
+}
+
+[typeof$="WebApplication"],
+[typeof$="SoftwareApplication"],
+[typeof$="MobileApplication"] {
+  --type-label: "Application";
+}

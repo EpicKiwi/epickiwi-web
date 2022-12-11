@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "avenir book";
+  src: url("avenir-bookoblique-webfont.woff2") format("woff2"),
+    url("avenir-bookoblique-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "avenir book";
+  src: url("avenir-book-webfont.woff2") format("woff2"),
+    url("avenir-book-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

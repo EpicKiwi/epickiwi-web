@@ -1,0 +1,379 @@
+@import url("../colors.css");
+@import url("article.css");
+
+main header {
+  z-index: 1000;
+}
+
+article,
+ek-brief, section {
+  width: 100%;
+  border: solid 1px currentColor;
+  padding: 10px;
+  font-size: 0.9em;
+  margin-right: -10vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  clear: both;
+  background: var(--background-color);
+}
+
+article {
+  position: relative;
+  z-index: 10;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+article h1,
+article h2,
+article h3 {
+  font-size: 1.5em;
+}
+
+article[property="character"] {
+  display: grid;
+  grid-template-columns: 1fr fit-content(1fr);
+  grid-auto-rows: min-content;
+}
+
+article[property="character"] > * {
+  grid-column: 1 / 3;
+}
+
+article[property="character"]::before {
+  content: "Personnage";
+  display: block;
+  opacity: 0.8;
+  font-size: 0.8em;
+}
+
+[property="character"] dl {
+  grid-column: 1;
+
+  margin-bottom: 20px;
+  display: grid;
+
+  grid-template-columns: min-content 1fr;
+  column-gap: 20px;
+  row-gap: 5px;
+}
+
+[property="character"] dl + dl {
+  grid-column: 2;
+}
+
+[property="character"] dt {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+article > :last-child {
+  margin-bottom: 10px;
+}
+
+.typewritten,
+.typewritten * {
+  font-family: monospace;
+}
+
+cite::before {
+  content: "« ";
+}
+
+cite::after {
+  content: " »";
+}
+
+/* brief panel */
+
+.brief-panel {
+  position: fixed;
+  top: 0;
+  left: calc(50vw - 500px - 300px);
+  width: 300px;
+
+  z-index: 100;
+
+  padding: 25px 10px 10px 10px;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .brief-panel {
+    left: calc(50vw - 500px);
+  }
+
+  .brief-opened main {
+    padding-left: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .brief-panel {
+    left: 0;
+  }
+
+  .brief-opened main {
+    padding-left: 300px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .brief-panel {
+    left: 0;
+    width: 100%;
+  }
+
+  .brief-opened .brief-panel {
+    height: 100vh;
+
+    background: var(--background-color);
+    z-index: 1001;
+  }
+
+  .brief-opened .brief-panel > * {
+    width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto !important;
+  }
+}
+
+#brief-main-button {
+  position: absolute;
+  right: 10px;
+  top: 25px;
+
+  font-size: 25px;
+  height: 1.5em;
+  padding-left: calc((1.5em - 1ex) / 2);
+  padding-right: calc((1.5em - 1ex) / 2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--background-color);
+  border: solid 1px currentColor;
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition: ease 0.25s;
+  transition-property: transform, font-size;
+}
+
+#brief-main-button.opened {
+  position: initial;
+}
+
+#brief-main-button .button-label {
+  display: inline-block;
+  max-width: 0;
+  padding-left: 0;
+  font-size: 0.75em;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: ease 0.2s;
+  transition-property: max-width, padding-left, opacity;
+  transition-delay: 0.1s;
+  opacity: 0;
+}
+
+#brief-main-button:hover .button-label,
+#brief-main-button:active .button-label,
+#brief-main-button:focus .button-label,
+#brief-main-button.emphasis .button-label,
+#brief-main-button.opened .button-label {
+  max-width: 300px;
+  padding-left: 0.5em;
+  opacity: 1;
+}
+
+#brief-main-button:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    var(--background-color);
+}
+
+#brief-main-button:active {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    var(--background-color);
+}
+
+@media screen and (max-width: 1600px) {
+  #brief-main-button {
+    right: unset;
+    left: 10px;
+    font-size: 30px;
+  }
+}
+
+#brief-content {
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+#brief-content h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+@media print {
+  #brief-content,
+  #brief-content[hidden] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: max-content;
+  }
+
+  .brief-panel {
+    position: unset;
+    width: 100%;
+    border: solid 1px currentColor;
+    margin-right: 25px;
+    padding: 15px;
+  }
+
+  .brief-panel #brief-main-button {
+    position: unset;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+  }
+
+  #brief-main-button .button-label {
+    max-width: 300px;
+    padding-left: 0.5em;
+    opacity: 1;
+  }
+}
+
+/* Emphases */
+
+p.action,
+p.consequence {
+  position: relative;
+}
+
+p.action::after,
+p.consequence::after {
+  content: "";
+  width: 100vw;
+  height: calc(100% + 0.5em);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-0.25em);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+p.action::before,
+p.consequence::before {
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(calc((100% + 10px) * -1));
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1200px) {
+  p.action::before,
+  p.consequence::before {
+    display: none;
+  }
+}
+
+@media print {
+  p.action::before,
+  p.consequence::before {
+    display: none;
+  }
+}
+
+em.action {
+  color: var(--scenario-action-color);
+}
+
+p.action::after {
+  background: var(--scenario-action-color);
+}
+
+p.action::before {
+  content: "Action";
+  color: var(--scenario-action-color);
+}
+
+.xp {
+  background-color: #fffae6;
+}
+
+.xp::before {
+  content: "XP";
+  display: inline-block;
+  font-size: 0.9em;
+  padding-top: 0.1em;
+  font-weight: bold;
+  color: #634f00;
+  
+  background: url("/src/css/page-types/scenarios/xp.svg");
+  padding-left: 1em;
+  background-size: 1em 1em;
+  background-position: 0 5px;
+  background-repeat: no-repeat;
+
+  transform: translateX(-520px);
+
+  position: absolute;
+  left: 50%;
+}
+
+@media screen and (max-width: 1100px) {
+  .xp::before {
+    content: url("/src/css/page-types/scenarios/xp.svg");
+    height: 1em;
+    width: 1em;
+    background: none;
+    padding: 0;
+    position: unset;
+    transform: translateY(3px);
+  }
+}
+
+@media print {
+  .xp::before {
+    content: url("/src/css/page-types/scenarios/xp.svg");
+    height: 1em;
+    width: 1em;
+    background: none;
+    padding: 0;
+    position: unset;
+    transform: translateY(3px);
+  }
+}
+
+em.consequence {
+  color: var(--scenario-consequence-color);
+}
+
+p.consequence::after {
+  background: var(--scenario-consequence-color);
+}
+
+p.consequence::before {
+  content: "Conséquence";
+  color: var(--scenario-consequence-color);
+}

@@ -1,0 +1,69 @@
+<template title="Titre de section" class="editor-template">
+    <h2></h2>
+</template>
+
+<template title="Titre de sous-section" class="editor-template">
+    <h3></h3>
+</template>
+
+<template title="Paragraphe" class="editor-template">
+    <p></p>
+</template>
+
+<template title="Paragraphe d'action" class="editor-template">
+    <p class="action"></p>
+</template>
+
+<template title="Paragraphe de conséquence" class="editor-template">
+    <p class="consequence"></p>
+</template>
+
+<template title="Discours d'un personnage" class="editor-template">
+    <blockquote></blockquote>
+</template>
+
+<template title="Note" class="editor-template">
+    <section>
+        <h3>(Titre de la note)</h3>
+        <p></p>
+    </section>
+</template>
+
+<template title="Note de coté" class="editor-template">
+    <section class="side">
+        <h3>(Titre de la note)</h3>
+        <p></p>
+    </section>
+</template>
+
+<template title="Fiche de personnage" class="editor-template">
+    <article property="character" typeof="Person">
+        <h3>
+          <span property="name">(Nom du personnage)</span>
+        </h3>
+
+        <dl>
+          <dt>Genre</dt>
+          <dd property="gender">(genre)</dd>
+          <dt>Age</dt>
+          <dd>(age)</dd>
+        </dl>
+
+        <p>(Une description physique et de la personnalité du personnage)</p>
+
+        <p>(Une description de son rôle dans l'histoire)</p>
+    </article>
+</template>
+
+<template title="Média : Document écrit">
+    <figure property="hasPart" typeof="Manuscript">
+        <blockquote class="typewritten">
+            (Contenu du document)
+        </blockquote>
+        <figcaption property="name">(Nom du média)</figcaption>
+      </figure>
+</template>
+
+<template title="Fin de scénario" class="editor-template">
+    <p><em>Fin de scénario...</em></p>
+</template>

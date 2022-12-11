@@ -1,0 +1,127 @@
+@import url("text.css");
+@import url("../lib/fonts-jp.css");
+
+:lang(jp),
+ruby {
+  font-size: 1.1em;
+}
+
+:lang(jp) rt,
+ruby rt {
+  font-size: 0.5em;
+}
+
+.particle,
+.proposition {
+  margin-right: 0.5em;
+}
+
+.verb {
+  margin-left: 0.5em;
+}
+
+.particle + .verb {
+  margin-left: 0;
+}
+
+strong {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+
+strong rt {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+/** example **/
+
+.example {
+  padding: 2rem;
+}
+
+.example > * {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .example {
+    padding: 2rem 0;
+  }
+}
+
+/** Notes **/
+
+.small-note {
+  float: right;
+  font-size: 0.8em;
+  margin-top: 0.8em;
+}
+
+@media screen and (max-width: 1000px) {
+  .small-note {
+    float: none;
+    text-align: right;
+  }
+}
+
+/** Translation **/
+
+.translated > * {
+  margin-bottom: 0;
+}
+
+.translated :lang(fr) {
+  font-style: italic;
+}
+
+/** links **/
+
+main a {
+  text-decoration: none;
+}
+
+/** alphabet tables **/
+
+table.alphabet {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.alphabet td {
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  table.alphabet {
+    width: 100%;
+  }
+
+  table.alphabet td {
+    padding: 0.5em 0;
+  }
+}
+
+/** vocabulaire **/
+
+dl {
+  columns: 2;
+}
+
+dl dd {
+  break-before: avoid;
+}
+
+dl small {
+  font-size: 0.7em !important;
+}
+
+@media screen and (max-width: 1000px) {
+  dl {
+    columns: unset;
+  }
+}

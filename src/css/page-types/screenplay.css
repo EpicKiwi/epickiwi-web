@@ -1,0 +1,134 @@
+@import url("../colors.css");
+@import url("article.css");
+
+main, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.1;
+  font-size: 12pt;
+}
+
+body {
+  --header-text-color: var(--text-color);
+}
+
+header,
+header * {
+  --text-color: unset;
+  --background-color: unset;
+}
+
+header > h1, header [property="name"] {
+  text-shadow: none;
+}
+
+header::after {
+  content: unset;
+}
+
+main h1,main h2,main h3,main h4,main h5,main h6 {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 1em;
+
+  font-size: 1em;
+  font-weight: bold;
+}
+
+main p {
+  margin-bottom: 0;
+}
+
+main {
+  counter-reset: scene-number;
+}
+
+@media screen {
+  main {
+    background: repeating-linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 59.7em, rgba(0,0,0,0.03) 59.7em, rgba(0,0,0,0.03) 60em, rgba(0,0,0,0) 60em, rgba(0,0,0,0) 60em);
+    background-position-y: 100vh;
+  }
+
+  header {
+    background: #f7f7f7;
+  }
+}
+
+/* scenes */
+h2 {
+  text-transform: uppercase;
+  counter-increment: scene-number;
+  position: relative;
+}
+
+h2::before {
+  content: counter(scene-number) ".";
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  h2::before {
+    position: relative;
+  }
+}
+
+main p + p {
+  margin-top: 1em;
+}
+
+/* Didascalies */
+main h2 ~ p {
+  width: 100%;
+  max-width: 62ex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main h3 small {
+  display: block;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+/* Dialogue */
+main h3 + p {
+  width: 100%;
+  max-width: 40ex;
+  margin-left: auto;
+  margin-right: auto;
+  break-after: avoid;
+}
+
+main .transition {
+  text-align: right;
+}
+
+@media print {
+  body {
+    counter-reset: page;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  header {
+    break-after: always;
+    height: fit-content;
+  }
+
+  header ul {
+    flex: 0;
+  }
+
+  @page {
+    margin-top: 2.5cm;
+    margin-bottom: 2.5cm;
+    margin-left: 2.5cm;
+    margin-right: 2.5cm;
+    counter-increment: page;
+  }
+}

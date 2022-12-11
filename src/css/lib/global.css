@@ -1,0 +1,435 @@
+@import "fonts.css";
+
+:root,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background-color);
+}
+
+body,
+:host {
+  font-family: var(--body-font-stack);
+  color: var(--text-color);
+}
+
+@media print {
+  body {
+    background: white;
+  }
+}
+
+svg,
+svg > * {
+  fill: currentColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--title-font-stack);
+}
+
+article[is="ek-article-card"] {
+  display: block;
+  background: var(--bright-background-color);
+  color: var(--onbright-text-color);
+  text-decoration: inherit;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: ease 0.5s;
+  transition-property: box-shadow transform;
+  margin-bottom: 50px;
+}
+
+article[is="ek-article-card"]:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01);
+}
+
+article[is="ek-article-card"] > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+article[is="ek-article-card"] > a {
+  display: grid;
+  grid-template-columns: 1fr fit-content(25%);
+  grid-template-rows: min-content min-content 1fr min-content 20px;
+  column-gap: 20px;
+}
+
+article[is="ek-article-card"] > a > * {
+  grid-column: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  article[is="ek-article-card"] > a {
+    grid-template-columns: 1fr;
+    padding-right: 20px;
+  }
+
+  article[is="ek-article-card"] img {
+    display: none;
+  }
+}
+
+article[is="ek-article-card"] > a::before {
+  content: "";
+  grid-row: 1;
+  padding-top: 20px;
+  display: block;
+  opacity: 0.7;
+}
+
+article[is="ek-article-card"] h2 {
+  grid-row: 2;
+
+  margin-bottom: 20px;
+  font-size: 40px;
+  padding-right: 20px;
+}
+
+article[is="ek-article-card"] h2 small {
+  font-size: 0.5em;
+  line-height: 1em;
+  font-family: inherit;
+  font-weight: normal;
+  display: block;
+}
+
+article[is="ek-article-card"] img {
+  grid-column: 2;
+  grid-row: 1 / 6;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/CreativeWork"] > a::before,
+article[is="ek-article-card"][typeof$="CreativeWork"] > a::before {
+  content: "Création";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Photograph"] > a::before,
+article[is="ek-article-card"][typeof$="Photograph"] > a::before {
+  content: "Photographie";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Drawing"] > a::before,
+article[is="ek-article-card"][typeof$="Drawing"] > a::before {
+  content: "Dessin";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Painting"] > a::before,
+article[is="ek-article-card"][typeof$="Painting"] > a::before {
+  content: "Peinture";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Photograph"] > a,
+article[is="ek-article-card"][itemtype="https://schema.org/Drawing"] > a,
+article[is="ek-article-card"][itemtype="https://schema.org/Painting"] > a,
+article[is="ek-article-card"][typeof$="Photograph"] > a,
+article[is="ek-article-card"][typeof$="Drawing"] > a,
+article[is="ek-article-card"][typeof$="Painting"] > a {
+  grid-template-columns: 1fr;
+  padding-right: 20px;
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Photograph"] img,
+article[is="ek-article-card"][itemtype="https://schema.org/Drawing"] img,
+article[is="ek-article-card"][itemtype="https://schema.org/Painting"] img,
+article[is="ek-article-card"][typeof$="Photograph"] img,
+article[is="ek-article-card"][typeof$="Drawing"] img,
+article[is="ek-article-card"][typeof$="Painting"] img {
+  grid-row: 3;
+  grid-column: 1;
+  display: block;
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Photograph"] p,
+article[is="ek-article-card"][itemtype="https://schema.org/Drawing"] p,
+article[is="ek-article-card"][itemtype="https://schema.org/Painting"] p,
+article[is="ek-article-card"][typeof$="Photograph"] p,
+article[is="ek-article-card"][typeof$="Drawing"] p,
+article[is="ek-article-card"][typeof$="Painting"] p {
+  display: none;
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Article"] > a::before,
+article[is="ek-article-card"][typeof$="Article"] > a::before {
+  content: "Article";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/HowTo"] > a::before,
+article[is="ek-article-card"][typeof$="HowTo"] > a::before {
+  content: "Guide";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/Recipe"] > a::before,
+article[is="ek-article-card"][typeof$="Recipe"] > a::before {
+  content: "Recette";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/ShortStory"] > a::before,
+article[is="ek-article-card"][typeof$="ShortStory"] > a::before {
+  content: "Nouvelle";
+}
+
+article[is="ek-article-card"][itemtype="https://schema.org/WebApplication"] > a::before,
+article[is="ek-article-card"][itemtype="https://schema.org/SoftwareApplication"] > a::before,
+article[is="ek-article-card"][itemtype="https://schema.org/MobileApplication"] > a::before,
+article[is="ek-article-card"][typeof$="WebApplication"] > a::before,
+article[is="ek-article-card"][typeof$="SoftwareApplication"] > a::before,
+article[is="ek-article-card"][typeof$="MobileApplication"] > a::before {
+  content: "Application";
+}
+
+.readlist-card {
+  background: rgba(255, 255, 255, 0.03);
+  list-style: none;
+  padding: 20px;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 25px;
+  transition: linear 0.1s background;
+}
+
+.readlist-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.readlist-card .title,
+.readlist-card .author {
+  display: inline;
+  font-size: 1em;
+}
+
+.readlist-card .author {
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+.readlist-card .author::before {
+  content: " — ";
+}
+
+.readlist-card .content:empty {
+  display: none;
+}
+
+.readlist-card .content {
+  margin-top: 10px;
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+.readlist-card .content * {
+  margin: 0;
+}
+
+.readlist-card .icon {
+  float: right;
+  font-size: 1.5em;
+  position: relative;
+  top: -0.2em;
+  opacity: 0.75;
+}
+
+data[itemprop][value]:empty {
+  display: none;
+}
+
+/* editor */
+
+body:not(.editing) #editor-templates {
+  display: none;
+}
+
+#editor-toolbar {
+  border: solid 1px black;
+  transform: translateX(calc(var(--target-block-width) - 100%))
+    translateY(calc(var(--target-block-height) - 5px));
+  background: var(--background-color);
+  z-index: 5000;
+}
+
+#editor-toolbar[hidden]:hover,
+#editor-toolbar[hidden]:active,
+#editor-toolbar[hidden]:focus {
+  display: block;
+}
+
+#editor-toolbar button {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  color: inherit;
+  white-space: nowrap;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#editor-toolbar img {
+  height: 1.5em;
+}
+
+#editor-toolbar button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#editor-toolbar .toolbar-submenu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 300px;
+  transform: translateY(calc(100% - 5px)) translateX(-5px);
+  background: var(--background-color);
+  border: solid 1px var(--text-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#editor-toolbar .toolbar-submenu button {
+  font-weight: normal;
+}
+
+#editor-toolbar .toolbar-submenu .template-list button {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.drag-result {
+  opacity: 0.5;
+}
+
+[contenteditable] {
+  padding: 1em;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+li[contenteditable],
+dd[contenteditable],
+dt[contenteditable] {
+  padding: 0 1em;
+}
+
+[contenteditable]:empty::before {
+  content: "(Bloc vide)";
+  font-style: italic;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  #editor-toolbar {
+    transform: translateX(calc(var(--target-block-width) / 2 - 50%))
+      translateY(calc(var(--target-block-height) - 5px));
+  }
+
+  #editor-toolbar .drag-block {
+    display: none;
+  }
+
+  #editor-toolbar .toolbar-submenu {
+    right: 50%;
+    transform: translateY(calc(100% - 5px)) translateX(50%);
+  }
+}
+
+#editor-button {
+  background: none;
+  font-style: italic;
+  opacity: 0.75;
+  border: none;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+#editor-button:hover,
+#editor-button:active,
+#editor-button:focus {
+  text-decoration: underline;
+}
+
+.editing #editor-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-style: normal;
+  padding: 10px;
+  border: solid 1px black;
+  background: var(--background-color);
+  text-decoration: none;
+  opacity: 1;
+}
+
+#editor-templates {
+  width: 100%;
+  max-width: 600px;
+  border: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#editor-templates h1 {
+  padding: 15px;
+}
+
+.template-list {
+  list-style-type: none;
+}
+
+.template-list button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1em;
+  min-height: 25px;
+  font-weight: normal;
+}
+
+.template-list button::before {
+  content: "➔";
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.template-list button:hover,
+.template-list button:active,
+.template-list button:focus {
+  background: rgba(0, 0, 0, 0.1);
+}

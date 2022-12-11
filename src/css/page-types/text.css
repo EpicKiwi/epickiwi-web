@@ -1,0 +1,505 @@
+@import url("../colors.css");
+@import url("../lib/fonts.css");
+@import url("../lib/global.css");
+
+/** text.css
+ * 
+ * Style de base pour les pages basées sur du texte.
+ * ex : Articles, scenarios, fiches, etc.
+ */
+
+main {
+  width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
+  line-height: 1.5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 100px;
+}
+
+main > * {
+  grid-column: 2;
+}
+
+@media print {
+  main {
+    font-size: 10pt;
+  }
+}
+
+main > *,
+main p,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main blockquote,
+main ul,
+main ol {
+  margin-bottom: 20px;
+}
+
+/* main */
+
+main .dark,
+main .bright {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+main hr {
+  border: none;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main blockquote,
+main hr {
+  clear: both;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  opacity: 0.8;
+  font-weight: bold;
+  width: calc(100% + 40px);
+  margin-right: -20px;
+}
+
+main h1,
+main h2 {
+  margin-left: -20px;
+  clear: both;
+  break-after: avoid;
+}
+
+main h1 small,
+main h2 small,
+main h3 small,
+main h4 small,
+main h5 small,
+main h6 small {
+  font-size: 0.5em;
+  line-height: 1em;
+  font-family: inherit;
+  font-weight: normal;
+  display: block;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+main h1 {
+  font-size: 45px;
+}
+
+main h2 {
+  font-size: 45px;
+}
+
+main h3 {
+  font-size: 35px;
+}
+
+main h4 {
+  font-size: 30px;
+}
+
+main ul,
+main ol {
+  padding-left: 20px;
+  clear: left;
+  list-style-type: "– ";
+}
+
+main blockquote {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main img,
+main video,
+main audio {
+  max-width: 100%;
+  max-height: 75vh;
+
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+main audio,
+main ek-audio {
+  width: 100%;
+}
+
+main ek-video,
+main video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main figure {
+  margin: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  max-width: 100%;
+  text-align: center;
+
+  clear: both;
+}
+
+main figure figcaption {
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+main figure blockquote {
+  text-align: left;
+}
+
+main figure blockquote > * {
+  margin-bottom: 1em;
+}
+
+main figure * {
+  max-width: 100%;
+  margin: 0;
+}
+
+main figure.left {
+  float: left;
+  margin-left: -40px;
+  margin-right: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 50%;
+}
+
+main figure.right {
+  float: right;
+  margin-right: -40px;
+  margin-left: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 50%;
+}
+
+main figure.center {
+  clear: both;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+main a {
+  text-decoration: underline;
+  position: relative;
+}
+
+main a:hover,
+main a:active,
+main a:focus {
+  filter: invert(1);
+  background: var(--background-color);
+  text-decoration: none;
+}
+
+main ek-code .line {
+  white-space: pre-wrap;
+}
+
+main [itemprop="abstract"],
+main [property="abstract"] {
+  font-size: 1.2em;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 1050px) {
+  main figure.right,
+  main figure.left {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    clear: both;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main h5,
+  main h6 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media print {
+  main figure.right,
+  main figure.left {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    clear: both;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+
+  main h1,
+  main h2,
+  main h3,
+  main h4,
+  main h5,
+  main h6 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+dl dt {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+dl > *:first-child {
+  margin-top: 0;
+}
+
+/* wide sections */
+
+main .wide {
+  width: 100vw;
+  max-width: unset;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main .fullsize {
+  max-height: unset;
+}
+
+main .fullsize > img {
+  max-width: unset;
+  max-height: unset;
+  box-shadow: none;
+  width: 100%;
+}
+
+/* header */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+header > * {
+  margin-right: 20px;
+}
+/* main title */
+header > h1,
+header > [property="name"] {
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 50px;
+}
+
+/* Tags */
+header > ul {
+  flex: 1;
+  padding-left: 0;
+  font-size: inherit;
+}
+
+header > ul > *,
+header [property="about"] {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header > ul > *::before,
+header [property="about"]::before {
+  content: "";
+  background-image: url("/src/css/icons/tag.svg");
+  background-size: cover;
+  margin-right: 5px;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  transform: translateY(2px);
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+header > ul > *[icon-src]::before,
+header [property="about"][icon-src]::before {
+  transform: unset;
+  background-image: attr(icon-src url);
+  filter: invert(1);
+}
+
+/* Author */
+header [property="author"]::before {
+  content: "Par ";
+}
+
+/* Date */
+header > time {
+  order: 100;
+  margin-right: 0;
+}
+
+header time::before,
+header [property^="date"]::before {
+  content: "";
+  background-image: url("/src/css/icons/date.svg");
+  background-size: cover;
+  margin-right: 5px;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  transform: translateY(2px);
+  filter: invert(1);
+}
+
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header > * {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  header > ul {
+    flex: 0 1;
+  }
+
+  header > h1,
+  header > [property="name"] {
+    text-align: center;
+  }
+}
+
+/* edit events */
+
+del {
+  display: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+.editor del {
+  display: inline;
+  text-decoration: none;
+  opacity: 0.3;
+  color: red;
+}
+
+.editor del:hover {
+  opacity: 0.9;
+}
+
+.editor del::before {
+  content: "(-) ";
+}
+
+.editor ins {
+  text-decoration: none;
+  color: green;
+}
+
+.editor ins::before {
+  content: "(+) ";
+}
+
+/* side */
+
+.side {
+  clear: right;
+  float: right;
+  width: 60%;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .side {
+    margin-right: 0;
+    width: 50%;
+  }
+}
+
+@media print {
+  .side {
+    margin-right: 0;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .side {
+    margin-right: 0;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,277 @@
+@prefix schema: <http://schema.org/> .
+@prefix degenesis: <http://epickiwi.fr/schema/degenesis/#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+
+<http://degenesis.com>
+    a schema:CreativeWork ;
+    schema:name "Degenesis" ;
+    schema:url "https://degenesis.com" ;
+    owl:sameAs <http://dbpedia.org/resource/Degenesis>
+    .
+
+## CULTS
+
+<http://degenesis.com/world/cults/spitalians>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Spitalians"@en, "Spitaliers"@fr ;
+    schema:slogan "The Last Bastion" ;
+    schema:url "https://degenesis.com/world/cults/spitalians" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/3f7164c135/01-cult-spitalians.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/purgare>
+    .
+
+<http://degenesis.com/world/cults/chroniclers>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Chroniclers"@en, "Chroniqueurs"@fr ;
+    schema:slogan "The Omniscient" ;
+    schema:url "https://degenesis.com/world/cults/chroniclers" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/7b9039ef32/02-cult-chroniclers.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen>
+    .
+
+<http://degenesis.com/world/cults/hellvetics>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Helvetics"@en, "Helvetiques"@fr ;
+    schema:slogan "The Brotherhood of Arms" ;
+    schema:url "https://degenesis.com/world/cults/hellvetics" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/5de60a75e7/03-cult-hellvetics.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/purgare>
+    .
+
+<http://degenesis.com/world/cults/judges>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Judges"@en, "Juges"@fr ;
+    schema:slogan "Hammers of Justice" ;
+    schema:url "https://degenesis.com/world/cults/judges" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/a2bae8f46a/04-cult-judges.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka>
+    .
+
+<http://degenesis.com/world/cults/clanners>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Clanners"@en, "Clannistes"@fr ;
+    schema:slogan "Rulers of the Wasteland" ;
+    schema:url "https://degenesis.com/world/cults/clanners" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/3c1fc7efc8/05-cult-clanners.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen> ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/purgare> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/scrappers>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Scrappers"@en, "Férailleurs"@fr ;
+    schema:slogan "The Dirt Diggers" ;
+    schema:url "https://degenesis.com/world/cults/scrappers" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/2f432b3af0/06-cult-scrappers.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen> ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/purgare> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/neolibyans>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Neolibyans"@en, "Neolybiens"@fr ;
+    schema:slogan "Conquerors of the World" ;
+    schema:url "https://degenesis.com/world/cults/neolibyans" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/ad5a8cf921/07-cult-neolibyans.svg" ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/scourgers>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Scourgers"@en ;
+    schema:slogan "Avengers of the Dark Continent" ;
+    schema:url "https://degenesis.com/world/cults/scourgers" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/47899aacae/08-cult-scourgers.svg" ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/anubians>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Anubians"@en, "Anubiens"@fr ;
+    schema:slogan "Keppers of the Prophecy" ;
+    schema:url "https://degenesis.com/world/cults/anubians" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/9de7f42c95/09-cult-anubians.svg" ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/jehammedans>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Jehammedans"@en, "Jehammetans"@fr ;
+    schema:slogan "Carriers of the God's Countenance" ;
+    schema:url "https://degenesis.com/world/cults/jehammedans" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/dbab28d303/10-cult-jehammedans.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania>
+    .
+
+<http://degenesis.com/world/cults/apocalyptics>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Apocalyptics"@en, "Apocalyptiques"@fr ;
+    schema:slogan "The Lords of Desire" ;
+    schema:url "https://degenesis.com/world/cults/apocalyptics" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/4e4667bd03/11-cult-apocalyptics.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen> ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania> ;
+    schema:location <http://degenesis.com/world/cultures/purgare> ;
+    schema:location <http://degenesis.com/world/cultures/africa>
+    .
+
+<http://degenesis.com/world/cults/anabaptists>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Anabaptists"@en, "Anabaptistes"@fr ;
+    schema:slogan "Torchbearers in Paradise" ;
+    schema:url "https://degenesis.com/world/cults/anabaptists" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/c8fdaaf785/12-cult-anabaptists.svg" ;
+    schema:location <http://degenesis.com/world/cultures/borca> ;
+    schema:location <http://degenesis.com/world/cultures/franka> ;
+    schema:location <http://degenesis.com/world/cultures/pollen> ;
+    schema:location <http://degenesis.com/world/cultures/purgare>
+    .
+
+<http://degenesis.com/world/cults/palers>
+    a schema:Organization ;
+    degenesis:cult <http://degenesis.com> ;
+    schema:name "Palers"@en, "Blaffards"@fr ;
+    schema:slogan "The Vault Crawlers" ;
+    schema:url "https://degenesis.com/world/cults/palers" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/3207429e27/13-cult-palers.svg" ;
+    schema:location <http://degenesis.com/world/cultures/balkhan> ;
+    schema:location <http://degenesis.com/world/cultures/hybrispania>
+    .
+
+## CULTURES
+
+<http://degenesis.com/world/cultures/borca>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Borca" ;
+    schema:slogan "Legacy of the Ancients" ;
+    schema:url "https://degenesis.com/world/cultures/borca" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/560a9a195d/01-culture-borca.svg"
+    .
+
+<http://degenesis.com/world/cultures/franka>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Franka" ;
+    schema:slogan "The Swarm" ;
+    schema:url "https://degenesis.com/world/cultures/franka" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/5b22ea0976/02-culture-franka.svg"
+    .
+
+<http://degenesis.com/world/cultures/pollen>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Pollen" ;
+    schema:slogan "Ethernal Wanderings" ;
+    schema:url "https://degenesis.com/world/cultures/pollen" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/ff1353bad2/03-culture-pollen.svg"
+    .
+
+<http://degenesis.com/world/cultures/balkhan>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Balkan" ;
+    schema:slogan "The Wild Lands" ;
+    schema:url "https://degenesis.com/world/cultures/balkhan" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/ca87271547/04-culture-balkhan.svg"
+    .
+
+<http://degenesis.com/world/cultures/hybrispania>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Hybrispania"@en, "Hybrispanie"@fr ;
+    schema:slogan "The Killing Fields" ;
+    schema:url "https://degenesis.com/world/cultures/hybrispania" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/c1827f99cf/05-culture-hyprispania.svg"
+    .
+
+<http://degenesis.com/world/cultures/purgare>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Purgare" ;
+    schema:slogan "Land of the Chozen" ;
+    schema:url "https://degenesis.com/world/cultures/purgare" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/f959d01f89/06-culture-purgare.svg"
+    .
+
+<http://degenesis.com/world/cultures/africa>
+    a schema:Place ;
+    degenesis:culture <http://degenesis.com> ;
+    schema:name "Africa" ;
+    schema:slogan "The Lion Rampant" ;
+    schema:url "https://degenesis.com/world/cultures/africa" ;
+    schema:logo "https://a.storyblok.com/f/72501/x/549c36296b/07-culture-africa.svg"
+    .
+
+# PLACES
+
+<http://degenesis.com/world/map/#the-protectorate>
+    a schema:Place ;
+    degenesis:place <http://degenesis.com> ;
+    schema:name "The protectorate"@en, "Le Protectorat"@fr ;
+    schema:slogan "Legacy of the Judges" ;
+    schema:containedIn <http://degenesis.com/world/cultures/borca>
+    .
+
+<http://degenesis.com/world/map/#justitian>
+    a schema:City ;
+    degenesis:place <http://degenesis.com> ;
+    schema:name "Justitian"@en, "Justitienne"@fr ;
+    schema:slogan "The Righteous Fist" ;
+    schema:containedIn <http://degenesis.com/world/map/#the-protectorate>
+    .
+
+<http://degenesis.com/world/map/#liqua>
+    a schema:City ;
+    degenesis:place <http://degenesis.com> ;
+    schema:name "Liqua" ;
+    schema:slogan "City of the Water Lords" ;
+    schema:containedIn <http://degenesis.com/world/map/#the-protectorate>
+    .
+
+<http://degenesis.com/world/map/#toulon>
+    a schema:City ;
+    degenesis:place <http://degenesis.com> ;
+    schema:name "Toulon" ;
+    schema:containedIn <http://degenesis.com/world/cultures/franka>
+    .
