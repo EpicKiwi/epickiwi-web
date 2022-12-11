@@ -1,9 +1,4 @@
-content/*
-!content/.gitkeep
-
-epickiwi-web.old
-public
-
-resources/_gen/
-
-.hugo_build.lock
+/*/
+index.html
+!/src
+!/schema
